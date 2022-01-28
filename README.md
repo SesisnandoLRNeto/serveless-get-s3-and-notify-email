@@ -1,7 +1,7 @@
 # serveless-get-s3-and-notify-email
 This project with the serverless use to read json files of a bucket (s3) and send a email SMTP
 
-## Installation Serverless
+## Install Serverless
 npm install -g serverless
 
 ## Install the lib

@@ -1,0 +1,31 @@
+service: nodemonitorserverless
+
+frameworkVersion: '2 || 3'
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+  lambdaHashingVersion: 20201221
+  region: sa-east-1
+  iamRoleStatements:
+    - Effect: Allow
+      Action:
+        - s3:GetObject
+      Resource:
+        - 'arn:aws:s3:::*'
+
+functions:
+  requestControll:
+    handler: monitor.handle
+    environment:
+      BUCKET: nodemonitorserverless
+      EMAIL_TRIGGER: trigger@email.com
+      PASS_TRIGGER: password
+      EMAIL_NOTIFIED: notified@email.com
+      SMTP_HOST: yourhostsmtp
+    events:
+      - s3:
+          bucket: nodemonitorserverless
+          event: s3:ObjectCreated:*
+          rules:
+            - suffix: .json

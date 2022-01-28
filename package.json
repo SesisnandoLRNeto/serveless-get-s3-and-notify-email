@@ -1,0 +1,16 @@
+{
+  "name": "nodemonitorserverless",
+  "version": "1.0.0",
+  "description": "",
+  "main": "monitor.js",
+  "scripts": {
+    "deploy": "serverless deploy --verbose"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "linux": "^4.2.1",
+    "node-mailer": "^0.1.1"
+  }
+}

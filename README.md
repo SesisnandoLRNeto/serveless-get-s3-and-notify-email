@@ -1,5 +1,5 @@
 # serveless-get-s3-and-notify-email
-This project with the serverless use to read json files of a bucket (s3) and send a email SMTP
+This project use the serverless (lambda function) to get json files into a bucket (s3 Amazon) and send to a email SMTP if some URL is invalid
 
 ## Install Serverless
 ```
